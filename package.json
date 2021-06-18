@@ -1,0 +1,22 @@
+{
+  "name": "crmgraphql",
+  "version": "1.0.0",
+  "description": "Segunda parte del curso en Udemy de React Avanzado",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "author": "Emiliano Cervantes",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.21.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
