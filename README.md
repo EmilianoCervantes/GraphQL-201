@@ -1,4 +1,5 @@
 # Curso de React Avanzado pt. 2:
+## Este proyecto es con GraphQL y MongoDB / Mongoose
 ### Next.js, Apollo, MongoDB y GraphQL
 
 ## Inicio del proyecto
