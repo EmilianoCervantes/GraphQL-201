@@ -134,7 +134,7 @@ const typeDefs = gql`
 
   type Query {
     # Usuarios
-    obtenerUsuario(token: String!): Usuario
+    obtenerUsuario: Usuario
 
     # Productos
     ## Select que toma todos los productos, no es necesario un input '()'

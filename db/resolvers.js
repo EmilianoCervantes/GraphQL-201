@@ -33,10 +33,12 @@ const crearToken = (info, secret, expiresIn) => {
 const resolvers = {
   Query: {
     // INICIO USUARIOS
-    obtenerUsuario: async (_, { token }) => {
-      const userId = await jwt.verify(token, process.env.SECRET);
+    obtenerUsuario: async (_, {}, ctx) => {
+      if (!ctx?.usuario) throw new Error('No se ha ingresado')
 
-      return userId;
+      const user = await Usuario.findById(ctx.usuario?.id.toString());
+
+      return user;
     },
     // FIN USUARIOS
 
@@ -283,7 +285,7 @@ const resolvers = {
       // Verificar si ya existe el cliente
       const { email } = input;
       const cliente = await Cliente.findOne({ email });
-      if (cliente) throw new Error('Cliente ya existe')
+      if (cliente) throw new Error('Este cliente ya fue registrado')
 
       const nuevoCliente = new Cliente(input);
       // Asignar un vendedor
