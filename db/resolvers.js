@@ -168,7 +168,7 @@ const resolvers = {
           }
         },
         { $limit: 5 },
-        { $sort: { totalVendido: -1 } }
+        { $sort: { totalVendido: -1, _id: 1 } }
       ]);
 
       return vendedores;
@@ -394,8 +394,6 @@ const resolvers = {
           const cantidadPrevia = pedidoExiste.pedido.find(prod => prod.idProducto === idProducto)?.cantidad;
 
           // Que no se sume lo original, sino sólo lo nuevo
-          console.log('cantidadPrevia');
-          console.log(cantidadPrevia);
           producto.existencia = existencia - cantidad + (cantidadPrevia || 0);
           await producto.save();
         }

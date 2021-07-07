@@ -28,6 +28,11 @@ const server = new ApolloServer({
   }
 });
 
-server.listen().then(({ url }) => {
+/**
+ * Puerto default es 4000
+ * Para deploy en Heroku, el puerto te lo da automáticamente por "process.env.PORT"
+ * 4000 lo mantenemos como el default
+*/
+server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`Servidor listo en la URL: ${url}`);
 });

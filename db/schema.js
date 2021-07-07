@@ -84,6 +84,8 @@ const typeDefs = gql`
   type PedidoProducto {
     idProducto: ID
     cantidad: Int
+    nombre: String
+    precio: Float
   }
 
   input UsuarioInput {
@@ -124,6 +126,8 @@ const typeDefs = gql`
   input PedidoProductoInput {
     idProducto: ID!
     cantidad: Int!
+    nombre: String!
+    precio: Float!
   }
 
   enum EstatusPedido {
